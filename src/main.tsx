@@ -1,7 +1,9 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.tsx'
+import Home from './pages/Home.tsx'
+import Methods from './pages/Methods.tsx'
+import Coffee from './pages/Coffee.tsx'
 import { BrowserRouter, Route, Routes } from 'react-router'
 
 createRoot(document.getElementById('root')!).render(
@@ -9,7 +11,9 @@ createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
 
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/methods" element={<Methods />} />
+        <Route path="/coffee" element={<Coffee />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
