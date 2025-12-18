@@ -7,7 +7,6 @@ export const Layout = ({ children }: LayoutProps) => {
     return (
         <main className="layout">
             {children}
-            Ola do Layout
         </main>
     )
 }

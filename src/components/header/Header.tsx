@@ -1,18 +1,25 @@
+import { useNavigate } from 'react-router';
 import './header.css'
 type HeaderProps = {
-  currentPage?: 'Home' | 'Methods' | 'Coffee'
+  currentPage: 'Home' | 'Methods' | 'Coffee'
 };
+type Pages = '' | 'methods' | 'coffee';
 
 export const Header = ({ currentPage }: HeaderProps) => {
+  const navigate = useNavigate()
+
+  const handleNavigation = (page: Pages) => {
+    navigate(`/${page}`)
+  }
   return (
     <header className="header">
       <div>
         <h1>Coffee Coders</h1>
       </div>
       <nav>
-        <button>Home</button>
-        <button>Metodos</button>
-        <button>Cafés</button>
+        <button onClick={() => handleNavigation('')} className={currentPage === 'Home' ? 'active' : ''}>Home</button>
+        <button onClick={() => handleNavigation('methods')} className={currentPage === 'Methods' ? 'active' : ''}>Metodos</button>
+        <button onClick={() => handleNavigation('coffee')} className={currentPage === 'Coffee' ? 'active' : ''}>Cafés</button>
       </nav>
     </header>
   )
