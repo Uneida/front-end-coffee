@@ -6,7 +6,7 @@ type PageContentLayoutProps = {
 
 export const PageContentLayout = ({ children }: PageContentLayoutProps) => {
   return (
-    <div>
+    <div className='page-content-layout'>
       {children}
     </div>
   )

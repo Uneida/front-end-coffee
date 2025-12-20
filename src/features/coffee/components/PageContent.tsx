@@ -1,12 +1,20 @@
 import './pageContent.css';
-
+import { COFFEE_MOCK } from '../mocks/coffee'
+import { CoffeeItem } from './coffeeItem/CoffeeItem';
 
 export const PageContent = () => {
   return (
-    <section className="layout">
+    <div>
       <div>
         <h1>Safras</h1>
       </div>
-    </section>
+      <div className='coffee-grid'>
+        {COFFEE_MOCK.map(function (item) {
+          return <CoffeeItem key={item.id} coffeeItem={item} />
+
+        })}
+
+      </div>
+    </div>
   )
 }

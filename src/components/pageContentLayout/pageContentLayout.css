@@ -1,0 +1,7 @@
+.page-content-layout {
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  align-self: center;
+  width: 100%;
+}
