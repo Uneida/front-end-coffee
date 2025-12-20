@@ -7,6 +7,6 @@ type CoffeeItemProps = {
 
 export const CoffeeItem = ({ coffeeItem }: CoffeeItemProps) => {
   return (
-    <Card title={coffeeItem.name} subTitle={coffeeItem.producer} imageURL={coffeeItem.imageURL} />
+    <Card title={coffeeItem.name} subTitle={coffeeItem.producer} imageURL={coffeeItem.imageURL} vintage={coffeeItem.vintage} roastLevel={coffeeItem.roastLevel} />
   )
 }

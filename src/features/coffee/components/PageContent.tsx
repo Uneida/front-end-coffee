@@ -6,7 +6,7 @@ export const PageContent = () => {
   return (
     <div>
       <div>
-        <h1>Safras</h1>
+        <h1>Carta de Cafés</h1>
       </div>
       <div className='coffee-grid'>
         {COFFEE_MOCK.map(function (item) {
