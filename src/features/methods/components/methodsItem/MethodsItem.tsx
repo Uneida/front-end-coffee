@@ -1,14 +1,24 @@
-
-
-import { Card } from '../../../../components/card/Card';
-import type { MethodsType } from '../../types';
-import './methodsItem.css';
+import { useNavigate } from "react-router";
+import { Card } from "../../../../components/card/Card";
+import type { MethodsType } from "../../types";
+import "./methodsItem.css";
 type MethodsItemProps = {
-  methodsItem: MethodsType
-}
+  methodsItem: MethodsType;
+};
 
 export const MethodsItem = ({ methodsItem }: MethodsItemProps) => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(`/methods/${methodsItem.id}`);
+  };
   return (
-    <Card title={methodsItem.methodType} subTitle={methodsItem.time} imageURL={methodsItem.imageURL} />
-  )
-}
+    <Card
+      onClick={handleClick}
+      title={`Nome: ${methodsItem.methodType}`}
+      subTitle={`Tempo de extração: ${methodsItem.extractionTime}`}
+      imageURL={methodsItem.imageURL}
+      description={`Quantidade de café: ${methodsItem.coffeeAmount}`}
+      additionalInfo={`Quantidade de água: ${methodsItem.waterAmount}`}
+    />
+  );
+};
